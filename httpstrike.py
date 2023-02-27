@@ -34,7 +34,7 @@ def start():
     print("|_| |_|\__|\__| .__/____/ \__|_|  |_|_|\_\___|")
     print("              |_|")
     print("")
-    print(f"{G}[{C}!!!{G}] {C}Author                 {G}: AngelDustSec")
+    print(f"{G}[{C}!!!{G}] {C}Author                 {G}: {Y}AngelDustSec")
     print(f"{G}[{C}!!!{G}] {C}Tool-Name              {G}: {Y}HttpStrike")
     print(f"{G}[{C}!!!{G}] {C}Coded By               {G}: {Y}K3ysTr0K3R, akrdonkdon")
     print(f"{G}[{C}!!!{G}] {C}YouTube                {G}: {Y}https://youtube.com/@Anonymous")
@@ -57,12 +57,12 @@ def flood(target):
     except OSError:
         pass
     except KeyboardInterrupt:
-        print("\n[!] Exiting...")
+        print(f"\n{G}[{C}!{G}] {W}Exiting...")
         exit()
 
 start()
-target = input("[?] Give me a target IP: ")
-request_number = int(input("[?] Request Number (Default: 10): "))
+target = input(f"{G}[{Y}?{G}] {W}Give me a target IP: ")
+request_number = int(input(f"{G}[{Y}?{G}] {W}Request Number (Default: 10): "))
 
 try:
     start()
@@ -79,14 +79,14 @@ try:
         print(f"{G}[{C}i{G}] {Y}{target}{G}:{Y}80 {W}is closed")
         exit()
 except KeyboardInterrupt:
-    print("\n[i] user requested interrupt")
-    print("[i] shutting down...")
+    print(f"\n{G}[{C}i{G}] {W}user requested interrupt")
+    print(f"{G}[{C}i{G}] {W}shutting down...")
     exit()
 except socket.gaierror:
-    print("[!] hostname not found")
+    print(f"{G}[{C}!{G}] {W}hostname not found")
     exit()
 except socket.error:
-    print("[!] could not connect to server")
+    print(f"{G}[{C}!{G}] {W}could not connect to server")
     exit()
 
 print("")
