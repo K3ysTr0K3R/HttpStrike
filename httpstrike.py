@@ -39,7 +39,7 @@ def start():
     print(f"{G}[{C}!!!{G}] {C}Coded By               {G}: {Y}K3ysTr0K3R, akrdonkdon")
     print(f"{G}[{C}!!!{G}] {C}YouTube                {G}: {Y}https://youtube.com/@Anonymous")
     print(f"{G}[{C}!!!{G}] {C}GitHub                 {G}: {Y}https://github.com/K3ysTr0K3R")
-    print(f"{G}[{C}!!!{G}] {C}Instagram              {G}: {Y}https://instagram.com/K3ysTr0K3R")
+    print(f"{G}[{C}!!!{G}] {C}Instagram              {G}: {Y}https://instagram.com/1_k3ystr0k3r_1")
     print(f"{G}[{C}!!!{G}] {C}Contributor-GitHub     {G}: {Y}https://github.com/akrdon")
     print(f"{G}[{C}!!!{G}] {C}Contributor-Instagram  {G}: {Y}https://instagram.com/akrdonkdon")
     print("")
